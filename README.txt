@@ -1,1 +1,1 @@
-IGGL E&I TOOLS website package. Designed by T. Rabha. Streamlit app; see README_DEPLOY.md for deployment instructions. Gas Engineering section removed.
+IGGL E&I TOOLS v2.3 deployment fix. Python 3.11 and Streamlit 1.41.1 pinned. See README_DEPLOY.md.
