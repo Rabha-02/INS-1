@@ -1,15 +1,17 @@
-# IGGL E&I TOOLS – Website
+# IGGL E&I TOOLS v2.3 – deployment fix
 
-Designed by T. Rabha.
+## Dependency fix
+This package pins Streamlit to 1.41.1 and Python to 3.11 to avoid uncontrolled upgrades during deployment. The app uses only Streamlit and Python standard-library modules.
 
-## Publish with Streamlit Community Cloud
-1. Create a GitHub repository.
-2. Upload all files in this folder to the repository root.
-3. Sign in at https://share.streamlit.io/ using GitHub.
-4. Create an app, select the repository and `app.py`, then deploy.
-5. Share the generated website URL.
+## Deploy / update an existing Streamlit Community Cloud app
+1. Extract this ZIP.
+2. Replace the files in your GitHub repository with the files from this package.
+3. Ensure `app.py`, `requirements.txt`, and `runtime.txt` are in the repository root (same folder).
+4. Commit and push the changes.
+5. In Streamlit Community Cloud, open the app menu and choose **Reboot app**. If dependency installation remains cached, use **Manage app → Reboot** after the new commit, or delete and redeploy the app.
+6. If it still fails, open **Manage app → Logs**, scroll to the first `ERROR:` / `Could not find a version` / `ResolutionImpossible` line, and share that section.
 
-## Run locally
+## Local run
 ```bash
 python -m venv .venv
 # Windows
@@ -18,13 +20,11 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Included workspaces
+## App content
+- Home
 - Instrumentation
 - Electrical
 - Telecom
 - Audit Trail
 
-Gas Engineering has been removed from the navigation and application.
-The home page provides simple workspace cards and responsive navigation.
-
-Audit Trail is session-based and can be exported as CSV. It is not persistent or tamper-evident.
+Gas Engineering is removed. Audit Trail remains session-based and can be exported as CSV.
